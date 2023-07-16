@@ -10,7 +10,7 @@
 //add comments
 
 testMaps = [
-{height:25,width:25,data:[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true,false,false,false,false,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true,false,false,false,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true,false,false,false,false,false,false,true,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true,true,false,false,false,false,true,false,false,true,false,false,false,false,true,false,true,true,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true,false,true,false,false,false,false,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true,false,false,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true,false,false,false,false,false,true,false,false]},
+{start: new _vector(0, 0), finish: new _vector(24, 24), height:25,width:25,data:[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true,false,false,false,false,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true,false,false,false,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true,false,false,false,false,false,false,true,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true,true,false,false,false,false,true,false,false,true,false,false,false,false,true,false,true,true,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true,false,true,false,false,false,false,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true,false,false,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true,false,false,false,false,false,true,false,false]},
 ]
 
 init = function() {
@@ -28,19 +28,19 @@ init = function() {
 
 	map = new _map(Math.floor(SCREENWIDTH/SCALE),Math.floor(SCREENHEIGHT/SCALE))
 	map.randomFill(0.1)
-	
-	start = new _vector(0,0)
-	finish = new _vector(map.width-1,map.height-1)
-	path = new _path(map,start,finish)
+
+	path = new _path(map)
 
 	loop();
 }
 
 class _map {
-	constructor(w,h,d) {
-		this.height = h;
-		this.width = w;
-		if (d==undefined) {this.data = new Array(h*w).fill(0);} else {this.data = d}
+	constructor(w,h,d, start=new _vector(0,0), finish=new _vector(w-1,h-1)) {
+		this.height = h
+		this.width = w
+		this.start = start
+		this.finish = finish
+		if (d==undefined) {this.data = new Array(h*w).fill(0)} else {this.data = d}
 	}
 	randomFill(p) {
 		for(var i=0;i<this.data.length;i++) this.data[i] = Math.random()<=p
@@ -49,7 +49,7 @@ class _map {
 		return this.data[p.x+(p.y*this.width)]
 	}
 	hValAt(p) {
-		return DJ?0:Math.distance(finish,p)
+		return DJ?0:Math.distance(this.finish,p)
 	}
 	draw() {
 		this.data.forEach(function(a,b) {
@@ -64,11 +64,9 @@ class _map {
 }
 
 class _path {
-	constructor(m,s,f) {
+	constructor(m) {
 		this.map = m;
-		this.start = s;
-		this.finish = f;
-		this.openSet = [new _node(m,this,null,s,0)];
+		this.openSet = [new _node(m,this,null,this.map.start,0)];
 		this.closedSet = [];
 		this.finished = false
 		this.highlightedNode = null
@@ -77,7 +75,7 @@ class _path {
 		this.openSet.sort((a,b)=>(a.h+a.g)-(b.h+b.g))
 		this.openSet.push(...this.openSet[0].spread())
 		this.closedSet.push(...this.openSet.splice(0,1))
-		if (this.openSet.length==0 || this.openSet.some(a=>(a.pos.x==finish.x&&a.pos.y==finish.y))) this.finished = true
+		if (this.openSet.length==0 || this.openSet.some(a=>(a.pos.x==this.map.finish.x&&a.pos.y==this.map.finish.y))) this.finished = true
 	}
 	drawNode(a) {
 		var finalPath = a
@@ -98,16 +96,16 @@ class _path {
 		},this)
 		if (this.finished) {
 			ctx.setColor("green")
-			var finalPath = this.openSet.find(a=>(a.pos.x==finish.x&&a.pos.y==finish.y))
+			var finalPath = this.openSet.find(a=>(a.pos.x==this.map.finish.x&&a.pos.y==this.map.finish.y))
 			while (finalPath!=null) {
 				ctx.fillRect(finalPath.pos.x*SCALE,finalPath.pos.y*SCALE,SCALE,SCALE)
 				finalPath = finalPath.parent
 			}
 		}
 		ctx.setColor("orange")
-		ctx.fillRect((this.finish.x*SCALE)+(SCALE/6),(this.finish.y*SCALE)+(SCALE/6),SCALE-(SCALE/3),SCALE-(SCALE/3))
+		ctx.fillRect((this.map.finish.x*SCALE)+(SCALE/6),(this.map.finish.y*SCALE)+(SCALE/6),SCALE-(SCALE/3),SCALE-(SCALE/3))
 		ctx.setColor("blue")
-		ctx.fillRect((this.start.x*SCALE)+(SCALE/6),(this.start.y*SCALE)+(SCALE/6),SCALE-(SCALE/3),SCALE-(SCALE/3))
+		ctx.fillRect((this.map.start.x*SCALE)+(SCALE/6),(this.map.start.y*SCALE)+(SCALE/6),SCALE-(SCALE/3),SCALE-(SCALE/3))
 		if (this.highlightedNode!=null) this.drawNode(this.highlightedNode)
 	}
 }
@@ -185,11 +183,11 @@ class _node {
 update = function() {
 	if (!path.finished) path.step()
 	if (keyboard.callKey("1").poll()) {
-		map = new _map(testMaps[0].width,testMaps[0].height,testMaps[0].data)
-		path = new _path(map,start,finish)
+		map = new _map(testMaps[0].width,testMaps[0].height,testMaps[0].data, testMaps[0].start, testMaps[0].finish)
+		path = new _path(map)
 	}
 	if (keyboard.callKey("enter").poll()) {
-		path = new _path(map,start,finish)
+		path = new _path(map)
 	}
 	if (keyboard.callKey("d").poll()) {
 		DEBUG = !DEBUG
@@ -207,7 +205,7 @@ update = function() {
 			} else {
 				path.highlightedNode = null
 				map.data[Math.floor(mouse.callButton(0).clickLoc.x/SCALE)+(Math.floor(mouse.callButton(0).clickLoc.y/SCALE)*map.width)]=!map.data[Math.floor(mouse.callButton(0).clickLoc.x/SCALE)+(Math.floor(mouse.callButton(0).clickLoc.y/SCALE)*map.width)]
-				path = new _path(map,start,finish)
+				path = new _path(map)
 			}
 		}
 	}
