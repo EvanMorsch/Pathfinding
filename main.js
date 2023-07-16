@@ -116,48 +116,36 @@ class _node {
 		this.g = g
 		this.h = m.hValAt(p)
 		this.parent = parent;
-		this.children = [];
 		this.map = m
 		this.parentPath = pp
 		this.color = "rgba("+(Math.random()*255)+","+(Math.random()*255)+","+(Math.random()*255)+",1)"
 	}
 	spread() {
 		var retSet = [];
-		if (this.goodMove(this.pos.add(new _vector(0,1)),this.g+1)) {
-			retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(0,1)),this.g+1))
-			this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(0,1)),this.g+1))
-		}
-		if (this.goodMove(this.pos.add(new _vector(0,-1)),this.g+1)) {
-			retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(0,-1)),this.g+1))
-			this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(0,-1)),this.g+1))
-		}
-		if (this.goodMove(this.pos.add(new _vector(1,0)),this.g+1)) {
-			retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(1,0)),this.g+1))
-			this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(1,0)),this.g+1))
-		}
-		if (this.goodMove(this.pos.add(new _vector(-1,0)),this.g+1)) {
-			retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(-1,0)),this.g+1))
-			this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(-1,0)),this.g+1))
-		}
+		let moveSet = [
+			{pos:new _vector(0,1), g_cost:this.g+1},
+			{pos:new _vector(0,-1), g_cost:this.g+1},
+			{pos:new _vector(1,0), g_cost:this.g+1},
+			{pos:new _vector(-1,0), g_cost:this.g+1}
+		]
 		if (ALLOWDIAGONALS) {
-			var s2 = Math.sqrt(2)
-			if (this.goodMove(this.pos.add(new _vector(1,1)),this.g+s2)) {
-				retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(1,1)),this.g+s2))
-				this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(1,1)),this.g+s2))
-			}
-			if (this.goodMove(this.pos.add(new _vector(1,-1)),this.g+s2)) {
-				retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(1,-1)),this.g+1))
-				this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(1,-1)),this.g+s2))
-			}
-			if (this.goodMove(this.pos.add(new _vector(-1,1)),this.g+s2)) {
-				retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(-1,1)),this.g+1))
-				this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(-1,1)),this.g+s2))
-			}
-			if (this.goodMove(this.pos.add(new _vector(-1,-1)),this.g+s2)) {
-				retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(-1,-1)),this.g+1))
-				this.children.push(new _node(this.map,this.parentPath,this,this.pos.add(new _vector(-1,-1)),this.g+s2))
-			}
+			let s2 = Math.sqrt(2)
+			moveSet.push(
+				{pos:new _vector(1,1), g_cost:this.g+s2},
+				{pos:new _vector(1,-1), g_cost:this.g+s2},
+				{pos:new _vector(-1,1), g_cost:this.g+s2},
+				{pos:new _vector(-1,-1), g_cost:this.g+s2}
+			)
 		}
+
+		moveSet.forEach(
+			a=>{
+				if (this.goodMove(this.pos.add(a.pos),a.g_cost)) {
+					retSet.push(new _node(this.map,this.parentPath,this,this.pos.add(a.pos),a.g_cost))
+				}
+			}, this
+		)
+		
 		return retSet
 	}
 	goodMove(p,g) {
