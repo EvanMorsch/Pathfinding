@@ -55,34 +55,6 @@ class _keyboard {
 //make sure to save button locations under each key
 //drag handler, track positions reported during drag
 
-class _button {
-	constructor(bt) {
-		this.button = bt;
-		this.status = false;
-		this.triggered = false;
-		this.clickLoc = new _vector(0,0)
-	}
-	poll(resetter=true) {
-		if (this.triggered) {
-			if (resetter) this.triggered = false;
-			return true;
-		}
-		return false;
-	}
-	get state() {
-		return this.status;
-	}
-	
-	buttonDown(loc) {//repeat is true if the keypress was fired by holding the key down
-		this.status = true;
-		this.triggered = true;
-		this.clickLoc = loc;
-	}
-	buttonUp() {
-		this.status = false;
-	}
-}
-
 class _mouse {
 	constructor() {
 		//event listners
@@ -136,8 +108,5 @@ class _mouse {
 	callButton(bt) {
 		if (!this.buttons.some(a=>bt==a.button)) this.addButton(bt)
 		return this.buttons.find(a=>bt==a.button)
-	}
-	addButton(bt) {
-		this.buttons.push(new _button(bt))
 	}
 }
