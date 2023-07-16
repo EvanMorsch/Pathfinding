@@ -21,7 +21,7 @@ init = function() {
 	SCALE = 25
 	ALLOWDIAGONALS = true
 	DEBUG = false
-	DJ = false//i can spell this word but its a dumber algorithm, just for Proof of concept
+	DJ = false//dijkstra
 	ctx.font = "12px sans-serif"
 	GUITEXT = "Click to toggle a wall; Enter to restart the path"
 	GUI = {x:SCREENWIDTH-(ctx.measureText(GUITEXT).width+4),y:0,width:ctx.measureText(GUITEXT).width+4,height:15}
@@ -114,7 +114,6 @@ class _node {
 	constructor(m,pp,parent,p,g) {
 		this.pos = p;
 		this.g = g
-		//if (!ALLOWDIAGONALS) this.g = Math.distance(pp.start,p)//this wasnt smart. leaving so i think o fa better way to do this
 		this.h = m.hValAt(p)
 		this.parent = parent;
 		this.children = [];
