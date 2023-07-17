@@ -1,8 +1,10 @@
+///Node shouldnt talkto map
+
 class _node {
 	constructor(m,pp,parent,p,g) {
 		this.pos = p;
 		this.g = g
-		this.h = m.hValAt(p)
+		this.h = pp.hValAt(p)
 		this.parent = parent;
 		this.map = m
 		this.parentPath = pp

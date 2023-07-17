@@ -6,6 +6,10 @@ class _path {
 		this.finished = false
 		this.stuck = false
 		this.highlightedNode = null
+        this.dijkstra = false
+	}
+    hValAt(p) {
+		return this.dijkstra?0:Math.distance(this.map.finish,p)
 	}
 	step() {
 		this.openSet.sort((a,b)=>(a.h+a.g)-(b.h+b.g))

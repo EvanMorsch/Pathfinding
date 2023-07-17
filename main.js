@@ -8,6 +8,7 @@
 //make finish and start calculated in map so the size doesnt change the placement relative to the map
 //notif when failed
 //add comments
+//move click responsibility to map
 
 testMaps = [
 	{
@@ -23,10 +24,9 @@ init = function() {
 	mouse = new _mouse()
 	keyboard = new _keyboard()
 	
-	SCALE = 25
+	SCALE = 25//will deprecate
 	ALLOWDIAGONALS = true
 	DEBUG = false
-	DJ = false//dijkstra
 	ctx.font = "12px sans-serif"
 	GUITEXT = "Click to toggle a wall; Enter to restart the path"
 	GUI = {x:SCREENWIDTH-(ctx.measureText(GUITEXT).width+4),y:0,width:ctx.measureText(GUITEXT).width+4,height:15}

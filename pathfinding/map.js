@@ -15,9 +15,6 @@ class _map {
 	valAt(p) {
 		return this.data[p.x+(p.y*this.width)]
 	}
-	hValAt(p) {
-		return DJ?0:Math.distance(this.finish,p)
-	}
 	draw() {
 		this.data.forEach(function(a,b) {
 			ctx.setColor("white")
