@@ -2,8 +2,6 @@
 //dissalow corner cutting
 //changable start and finish
 //easier drawing walls
-//favors diagnoals in some instances (i think it favors them because of the hval of the tile?)
-//use different distance func for faster calcs (wouldnt work when i tried to implement it, favored strange routes like before)
 //better gui
 //make finish and start calculated in map so the size doesnt change the placement relative to the map
 //notif when failed
