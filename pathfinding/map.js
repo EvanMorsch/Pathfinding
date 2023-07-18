@@ -1,13 +1,15 @@
-const MAP_SCALE = 25
+const MAP_DEFAULT_SCALE = 25
+const MAP_ALLOW_DIAGONALS = true
 
 class _map {
-	constructor(w,h,d, start=new _vector(0,0), finish=new _vector(w-1,h-1)) {
+	constructor(w, h = w, s = MAP_DEFAULT_SCALE) {
 		this.height = h
 		this.width = w
-		this.start = start
-		this.finish = finish
-        this.scale = MAP_SCALE
-		if (d==undefined) {this.data = new Array(h*w).fill(0)} else {this.data = d}
+		this.start = undefined
+		this.finish = undefined
+        this.scale = s
+        this.allowDiagonals = MAP_ALLOW_DIAGONALS
+		this.data = new Array(h*w).fill(0)
 	}
 	randomFill(p) {
 		for(var i=0;i<this.data.length;i++) this.data[i] = Math.random()<=p

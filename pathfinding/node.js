@@ -18,7 +18,7 @@ class _node {
 			{pos:new _vector(1,0), g_cost:this.g+1},
 			{pos:new _vector(-1,0), g_cost:this.g+1}
 		]
-		if (ALLOWDIAGONALS) {
+		if (this.map.allowDiagonals) {
 			let s2 = Math.sqrt(2)
 			moveSet.push(
 				{pos:new _vector(1,1), g_cost:this.g+s2},

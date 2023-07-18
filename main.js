@@ -24,14 +24,14 @@ init = function() {
 	mouse = new _mouse()
 	keyboard = new _keyboard()
 	
-	SCALE = 25//will deprecate
-	ALLOWDIAGONALS = true
 	DEBUG = false
 	ctx.font = "12px sans-serif"
 	GUITEXT = "Click to toggle a wall; Enter to restart the path"
-	GUI = {x:SCREENWIDTH-(ctx.measureText(GUITEXT).width+4),y:0,width:ctx.measureText(GUITEXT).width+4,height:15}
+	GUI = {x:SCREENWIDTH-(ctx.measureText(GUITEXT).width+4), y:0, width:ctx.measureText(GUITEXT).width+4, height:15}
 
-	map = new _map(Math.floor(SCREENWIDTH/SCALE),Math.floor(SCREENHEIGHT/SCALE))
+	map = new _map(Math.floor(SCREENWIDTH/MAP_DEFAULT_SCALE), Math.floor(SCREENHEIGHT/MAP_DEFAULT_SCALE))
+	map.start = new _vector(0,0)
+	map.finish = new _vector(map.width-1, map.height-1)
 	map.randomFill(0.1)
 
 	path = new _path(map)
@@ -55,20 +55,20 @@ update = function() {
 	}
 	
 	if (mouse.callButton(0).poll()) {
-		if (Math.floor(mouse.callButton(0).clickLoc.x/SCALE)>map.width||Math.floor(mouse.callButton(0).clickLoc.y/SCALE)>map.height) return
-		var con = !DEBUG?undefined:path.openSet.find(a=>(a.pos.x==Math.floor(mouse.callButton(0).clickLoc.x/SCALE)&&a.pos.y==Math.floor(mouse.callButton(0).clickLoc.y/SCALE)))
+		if (Math.floor(mouse.callButton(0).clickLoc.x/map.scale)>map.width||Math.floor(mouse.callButton(0).clickLoc.y/map.scale)>map.height) return
+		var con = !DEBUG?undefined:path.openSet.find(a=>(a.pos.x==Math.floor(mouse.callButton(0).clickLoc.x/map.scale)&&a.pos.y==Math.floor(mouse.callButton(0).clickLoc.y/map.scale)))
 		if (con!=undefined) {
 			path.highlightedNode = con
 		} else {
-			con = !DEBUG?undefined:path.closedSet.find(a=>(a.pos.x==Math.floor(mouse.callButton(0).clickLoc.x/SCALE)&&a.pos.y==Math.floor(mouse.callButton(0).clickLoc.y/SCALE)))
+			con = !DEBUG?undefined:path.closedSet.find(a=>(a.pos.x==Math.floor(mouse.callButton(0).clickLoc.x/map.scale)&&a.pos.y==Math.floor(mouse.callButton(0).clickLoc.y/map.scale)))
 			if (con!=undefined) {
 				path.highlightedNode = con
 			} else {
 				path.highlightedNode = null
 				map.data[
-					Math.floor(mouse.callButton(0).clickLoc.x/SCALE)+(Math.floor(mouse.callButton(0).clickLoc.y/SCALE)*map.width)
+					Math.floor(mouse.callButton(0).clickLoc.x/map.scale)+(Math.floor(mouse.callButton(0).clickLoc.y/map.scale)*map.width)
 				] = !map.data[
-					Math.floor(mouse.callButton(0).clickLoc.x/SCALE)+(Math.floor(mouse.callButton(0).clickLoc.y/SCALE)*map.width)
+					Math.floor(mouse.callButton(0).clickLoc.x/map.scale)+(Math.floor(mouse.callButton(0).clickLoc.y/map.scale)*map.width)
 				]
 				path = new _path(map)
 			}
