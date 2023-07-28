@@ -24,8 +24,13 @@ init = function() {
 	
 	DEBUG = false
 	ctx.font = "12px sans-serif"
-	GUITEXT = "Click to toggle a wall; Enter to restart the path"
-	GUI = {x:SCREENWIDTH-(ctx.measureText(GUITEXT).width+4), y:0, width:ctx.measureText(GUITEXT).width+4, height:15}
+	entities = []
+	entities.push(
+		new GUI_Notif(
+			{x:0, y:0},
+			"Click to toggle a wall; Enter to restart the path"
+		)
+	)
 
 	map = new _map(Math.floor(SCREENWIDTH/MAP_DEFAULT_SCALE), Math.floor(SCREENHEIGHT/MAP_DEFAULT_SCALE))
 	map.start = new _vector(0,0)
@@ -74,20 +79,11 @@ update = function() {
 	}
 }
 
-drawGUI = function() {
-	if (!(mouse.location.x>=GUI.x&&mouse.location.x<=GUI.x+GUI.width&&mouse.location.y>=GUI.y&&mouse.location.y<=GUI.y+GUI.height)) {
-		ctx.clearRect(GUI.x,GUI.y,GUI.width,GUI.height)
-		ctx.setColor("white")
-		ctx.strokeRect(GUI.x,GUI.y,GUI.width,GUI.height)
-		ctx.fillText(GUITEXT,GUI.x+2,GUI.y+GUI.height-2)
-	}
-}
-
 draw = function() {
 	ctx.clearScreen()
 	map.draw()
 	map.drawPath(path)
-	drawGUI()
+	entities.forEach(a=>a.draw())
 }
 
 loop = function() {
